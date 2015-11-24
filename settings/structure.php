@@ -2,10 +2,10 @@
 // Use this file to do any database changes for your application.
 
 if (!isset($Drop))
-   $Drop = FALSE; // Safe default - Set to TRUE to drop the table if it already exists.
+   $Drop = FALSE; // Safe default - set to TRUE to drop the table if it already exists.
 
 if (!isset($Explicit))
-   $Explicit = FALSE; // Safe default - Set to TRUE to remove all other columns from table.
+   $Explicit = FALSE; // Safe default - set to TRUE to remove all other columns from table.
 
 $Database = Gdn::Database();
 
@@ -19,71 +19,71 @@ $Px = $Database->DatabasePrefix;
 
 // Example: New table construction.
 /*
-$Construct->Table('ExampleTable')
-	->PrimaryKey('ExampleTableID')
-   ->Column('ExampleUserID', 'int', TRUE)
-   ->Column('Field1', 'varchar(50)')
-   ->Set($Explicit, $Drop); // If you omit $Explicit and $Drop they default to false.
+$Construct->table('Exampletable')
+	->PrimaryKey('ExampletableID')
+   ->column('ExampleUserID', 'int', TRUE)
+   ->column('Field1', 'varchar(50)')
+   ->set($Explicit, $Drop); // If you omit $Explicit and $Drop they default to false.
 */
 
-$Construct->Table('Jam');
+$Construct->table('Jam');
 
 $Construct
-  ->PrimaryKey('JamID')
-    ->Column('Name', 'varchar(200)')
-    ->Column('Description', 'text')
-    ->Column('StartDate', 'datetime', NULL)
-    ->Column('FinishDate', 'datetime', NULL)
-    ->Column('DateCreated', 'datetime', NULL)
-    ->Column('DateUpdated', 'datetime', NULL)
-    ->Column('IsPublic', 'tinyint(1)', '1')
-    ->Set($Explicit, $Drop);
+  ->primaryKey('JamID')
+    ->column('Name', 'varchar(200)')
+    ->column('Description', 'text')
+    ->column('StartDate', 'datetime', NULL)
+    ->column('FinishDate', 'datetime', NULL)
+    ->column('DateCreated', 'datetime', NULL)
+    ->column('DateUpdated', 'datetime', NULL)
+    ->column('IsPublic', 'tinyint(1)', '1')
+    ->set($Explicit, $Drop);
 
-$Construct->Table('JamGame');
-
-$Construct
-    ->Column('JamID', 'int', FALSE, array('primary', 'key'))
-    ->Column('GroupID', 'int', FALSE, array('primary', 'key'))
-    ->Column('Name', 'varchar(200)')
-    ->Column('Description', 'text')
-    ->Column('Submitted', 'tinyint(1)', '0')
-    ->Column('DateCreated', 'datetime', NULL)
-    ->Column('DateUpdated', 'datetime', NULL)
-    ->Column('IsPublic', 'tinyint(1)', '1')
-    ->Set($Explicit, $Drop);
-
-$Construct->Table('JamGroup');
+$Construct->table('JamGame');
 
 $Construct
-  ->PrimaryKey('GroupID')
-    ->Column('Name', 'varchar(200)')
-    ->Column('Description', 'text')
-    ->Column('DateCreated', 'datetime', NULL)
-    ->Column('DateUpdated', 'datetime', NULL)
-    ->Column('IsPublic', 'tinyint(1)', '1')
-    ->Set($Explicit, $Drop);
+    ->column('JamID', 'int', FALSE, array('primary', 'key'))
+    ->column('GroupID', 'int', FALSE, array('primary', 'key'))
+    ->column('Name', 'varchar(200)')
+    ->column('Description', 'text')
+    ->column('Submitted', 'tinyint(1)', '0')
+    ->column('DateCreated', 'datetime', NULL)
+    ->column('DateUpdated', 'datetime', NULL)
+    ->column('IsPublic', 'tinyint(1)', '1')
+    ->set($Explicit, $Drop);
 
-$Construct->Table('GroupUser');
+$Construct->table('JamGroup');
 
 $Construct
-  ->PrimaryKey('GroupUserID')
-    ->Column('UserID', 'int', FALSE, 'key')
-    ->Column('GroupID', 'int', FALSE, 'key')
-    ->Column('DateCreated', 'datetime', NULL)
-    ->Column('DateUpdated', 'datetime', NULL)
-    ->Column('IsPublic', 'tinyint(1)', '1')
-    ->Set($Explicit, $Drop);
+  ->primaryKey('GroupID')
+    ->column('Name', 'varchar(200)')
+    ->column('Description', 'text')
+    ->column('DateCreated', 'datetime', NULL)
+    ->column('DateUpdated', 'datetime', NULL)
+    ->column('IsPublic', 'tinyint(1)', '1')
+    ->set($Explicit, $Drop);
+
+$Construct->table('GroupUser');
+
+$Construct
+  ->primaryKey('GroupUserID')
+    ->column('UserID', 'int', FALSE, 'key')
+    ->column('GroupID', 'int', FALSE, 'key')
+    ->column('DateCreated', 'datetime', NULL)
+    ->column('DateUpdated', 'datetime', NULL)
+    ->column('IsPublic', 'tinyint(1)', '1')
+    ->set($Explicit, $Drop);
 
 
 // Example: Add column to existing table.
 /*
-$Construct->Table('User')
-   ->Column('NewColumnNeeded', 'varchar(255)', TRUE) // Always allow for NULLs unless it's truly required.
-   ->Set();
+$Construct->table('User')
+   ->column('NewcolumnNeeded', 'varchar(255)', TRUE) // Always allow for NULLs unless it's truly required.
+   ->set();
 */
 
 /**
- * Column() has the following arguments:
+ * column() has the following arguments:
  *
  * @param string $Name Name of the column to create.
  * @param string $Type Data type of the column. Length may be specified in parenthesis.
