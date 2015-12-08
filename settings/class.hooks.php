@@ -4,13 +4,13 @@
  *
  * Remember to rename this to FooHooks, where 'Foo' is you app's short name.
  */
-class SkeletonHooks implements Gdn_IPlugin {
+//class SkeletonHooks implements Gdn_IPlugin {
    /**
     * Example hook. You should delete this.
     *
     * @param object $Sender The object that fired the event. All hooks must accept this single parameter.
     */
-   public function ControllerName_EventName_Handler($Sender) {
+//   public function ControllerName_EventName_Handler($Sender) {
       // You can find existing hooks by searching for 'FireEvent'
       // Request new hooks on the VanillaForums.org community forum!
    }
@@ -25,7 +25,7 @@ class SkeletonHooks implements Gdn_IPlugin {
 
       // Stores a value in the config to indicate it has previously been installed.
       // You can use if(C('Jam.Setup', FALSE)) to test whether to repeat part of your setup.
-      SaveToConfig('Jam.Setup', TRUE);
+      //SaveToConfig('Jam.Setup', TRUE);
    }
 
    /**
