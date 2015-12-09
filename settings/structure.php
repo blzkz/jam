@@ -1,18 +1,18 @@
-<?php if (!defined('APPLICATION')) exit(); // Make sure this file can't get accessed directly
+<?php defined('APPLICATION') or exit();  // Make sure this file can't get accessed directly
 // Use this file to do any database changes for your application.
 
 if (!isset($Drop))
-   $Drop = FALSE; // Safe default - set to TRUE to drop the table if it already exists.
+   $Drop = TRUE; // Safe default - set to TRUE to drop the table if it already exists.
 
 if (!isset($Explicit))
-   $Explicit = FALSE; // Safe default - set to TRUE to remove all other columns from table.
+   $Explicit = TRUE; // Safe default - set to TRUE to remove all other columns from table.
 
 $Database = Gdn::Database();
 
 $SQL = $Database->SQL(); // To run queries.
 $Construct = $Database->Structure(); // To modify and add database tables.
 $Validation = new Gdn_Validation(); // To validate permissions (if necessary).
-$Px = $Database->DatabasePrefix;
+//$Px = $Database->DatabasePrefix;
 
 // Add your tables or new columns under here (see example below).
 
