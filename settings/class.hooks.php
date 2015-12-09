@@ -4,6 +4,16 @@
  *
  * Remember to rename this to FooHooks, where 'Foo' is you app's short name.
  */
+class JamHooks implements Gdn_IPlugin {
+   /**
+    * Example hook. You should delete this.
+    *
+    * @param object $Sender The object that fired the event. All hooks must accept this single parameter.
+    */
+   public function ControllerName_EventName_Handler($Sender) {
+      // You can find existing hooks by searching for 'FireEvent'
+      // Request new hooks on the VanillaForums.org community forum!
+   }
 
    /**
     * Special function automatically run upon clicking 'Enable' on your application.
