@@ -25,7 +25,7 @@
 
       // Stores a value in the config to indicate it has previously been installed.
       // You can use if(C('Jam.Setup', FALSE)) to test whether to repeat part of your setup.
-      //SaveToConfig('Jam.Setup', TRUE);
+      SaveToConfig('Jam.Setup', TRUE);
    }
 
    /**
