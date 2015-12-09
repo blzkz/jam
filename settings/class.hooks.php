@@ -13,7 +13,11 @@ class JamHooks implements Gdn_IPlugin {
   // public function ControllerName_EventName_Handler($Sender) {
       // You can find existing hooks by searching for 'FireEvent'
       // Request new hooks on the VanillaForums.org community forum!
+<<<<<<< HEAD
   // }
+=======
+//   }
+>>>>>>> 0cea0d2256945b2162c9304cf312442fc693aa54
 
    /**
     * Special function automatically run upon clicking 'Enable' on your application.
